@@ -119,12 +119,12 @@ kuriniy_way21.discription = '''
 Проходя мимо склада с призовой кукурузой вы улавливаете запах...
 '''
 kuriniy_way21.ways['Кукуруза'] = '- Логично ведь'
-kuriniy_way21.ways['Шаурма'] = ' - ....'
+kuriniy_way21.ways['Шаверма'] = ' - ....'
 situations[kuriniy_way21.name] = kuriniy_way21
 
 
 kuriniy_way22 = Script()
-kuriniy_way22.name = 'Кукуруза..'
+kuriniy_way22.name = 'Кукуруза'
 kuriniy_way22.discription = '''
 Вы кидаетесь к амбару, проламываете стену и начинаете жадно поедать кукурузу.
 Час спустя
@@ -135,7 +135,7 @@ situations[kuriniy_way22.name] = kuriniy_way22
 
 
 kuriniy_way23 = Script()
-kuriniy_way23.name = 'Шаурма'
+kuriniy_way23.name = 'Шаверма'
 kuriniy_way23.discription = '''
 Бывает кншн
 
