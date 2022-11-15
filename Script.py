@@ -5,23 +5,45 @@ class Script:
         self.name = ""
 
 situations = {}
-start = Script()
-start.discription = 'Выберите персонажа'
-start.ways["Крыс"] = '''
-О персонаже:
-Вы - 2-х миллиметровый крысёныш. 
-Крыса вы не только как животное, но и по натуре. У вас нет друзей((('''
-start.ways["Курица"] = '''
-О персонаже:
-Вы – 2-х метровая курица. Жизнь у вас такая себе. 
+
+
+
+go = Script()
+go.name = 'Старт'
+go.discription = '''
+Выберите персонажа:
+2-х миллиметровый крысёныш
+    или
+2-х метровая курица
+'''
+go.ways['Курица'] = ' - За кукурузой!!!'
+go.ways['Крыс'] = ' - Проигнорить как обычно'
+situations[go.name] = go
+
+
+kuriniy_way0 = Script()
+kuriniy_way0.name = 'Курица'
+kuriniy_way0.discription = '''
+Вы - 2-х метровая курица. Жизнь у вас такая себе. 
 Из-за высоких цен, рассчитанных на котов, вы не можете покупать себе достаточно еды.
-*урчание в области живота*'''
-start.name = 'Старт'
-situations[start.name] = start
+*урчание в области живота*
+'''
+kuriniy_way0.ways['ок'] = ' - Введите "ок" чтобы продолжить'
+situations[kuriniy_way0.name] = kuriniy_way0
+
+
+rat_way0 = Script()
+rat_way0.name = 'Крыс'
+rat_way0.discription = '''
+Вы - 2-х миллиметровый крысёныш.
+Крыса вы не только как животное, но и по натуре. У вас нет друзей(((
+'''
+rat_way0.ways['оки'] = ' - Введите "оки" чтобы продолжить'
+situations[rat_way0.name] = rat_way0
 
 
 kuriniy_way1 = Script()
-kuriniy_way1.name = 'Курица'
+kuriniy_way1.name = 'ок'
 kuriniy_way1.discription = '''Прогуливаясь по улице вы увидели объявление о наборе участников в шоу-конкурс. 
 Постер:
 "Соревнование по поеданию кукурузы! Главный приз – трёшка в Сыратове и 10 центнеров кукурузы!!"
@@ -144,7 +166,7 @@ situations[kuriniy_way25.name] = kuriniy_way25
 
 
 rat_way1 = Script()
-rat_way1.name = 'Крыс'
+rat_way1.name = 'оки'
 rat_way1.discription = '''
 Прогуливаясь по улице вы увидели объявление о наборе участников в шоу-конкурс.
 "Соревнование по поеданию кукурузы! Главный приз – трёшка в Сыратове и 10 центнеров кукурузы!!" '''
@@ -248,7 +270,7 @@ situations[rat_way42.name] = rat_way42
 
 
 
-situations[start.name] = start
+situations[go.name] = go
 current_situation = situations["Старт"]
 
 while True:
