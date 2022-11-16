@@ -282,10 +282,11 @@ current_situation = situations["Старт"]
 
 while True:
     print(current_situation.discription)
-    for k, v in current_situation.ways.items():
-        print(k, v)
-    choise = input()
+    for i, (k, v) in enumerate(current_situation.ways.items()):
+        print(i + 1, v)
+    choise = list(current_situation.ways.keys())[int(input()) - 1]
     current_situation = situations[choise]
     if len(current_situation.ways) == 0:
         break
 print(current_situation.discription)
+
