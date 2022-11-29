@@ -60,5 +60,15 @@ class Hero(Pers):
         if item_object in self.bag:
             points = item_object.get_params[0]
             self.health_points += points
-            
+
+    def review_items(self):
+        return self.bag
+
+
+    def take_item(self, item):
+        self.bag[item.name] = item.get_params()
+
+    def review_item(self, item):
+        return self.bag.get(item.name)
+
 
