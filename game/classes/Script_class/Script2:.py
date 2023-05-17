@@ -155,21 +155,21 @@ class Game:
             Script('Шаурма', '''АБ ответ
             ''')]
 
-        situations = {}
+        self.ways = {}
 
 
         for discription in lst_of_sits:
             self.ways[discription.name] = discription
 
     def start(self):
-        current_situation = situations["Старт"]
+        current_situation = self.ways["Старт"]
 
         while True:
             print(current_situation.discription)
             for i, (k, v) in enumerate(current_situation.ways.items()):
                 print(i + 1, v)
             choise = list(current_situation.ways.keys())[int(input()) - 1]
-            current_situation = situations[choise]
+            current_situation = self.ways[choise]
             if len(current_situation.ways) == 0:
                 break
         print(current_situation.discription)

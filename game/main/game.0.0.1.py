@@ -1,3 +1,4 @@
+from classes import Items_classes
 
 from classes.Charecters_classes.Hero_file import Hero
 from classes.Items_classes.Item_file import Item
